@@ -20,28 +20,39 @@
     </nav>
   </header>
 
-  <main class="d-flex align-items-center container h-100">
-
-    <table class="table table-bordered table-dark">
-      <tbody>
-        <tr>
-          <td id='1' class='cell'>X</td>
-          <td id='2' class='cell'></td>
-          <td id='3' class='cell'></td>
-        </tr>
-        <tr>
-          <td id='4' class='cell'></td>
-          <td id='5' class='cell'></td>
-          <td id='6' class='cell'></td>
-        </tr>
-        <tr>
-          <td id='7' class='cell'></td>
-          <td id='8' class='cell'></td>
-          <td id='9' class='cell'></td>
-        </tr>
-      </tbody>
-    </table>
-
+  <main class="align-items-center container h-100">
+    <section class="welcome card p-5 bg-success">
+      <H1>
+        Welcome To Tick Tac Toe game
+      </H1>
+      <form class="d-flex flex-column">
+        <h3 class="text-center">Enter Name Players</h3>
+        <span><input type="text" class="pl1 m-3 border-0 p-2" placeholder="Player 1" /> - X</span>
+        <span><input type="text" class="pl2 m-3 border-0 p-2" placeholder="Player 2" />- O</span>
+        <button class="startGame btn btn-primary m-3"> Start Game</button>
+      </form>
+    </section>
+    <section class="board ">
+      <table class="table table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td id='1' class='cell'></td>
+            <td id='2' class='cell'></td>
+            <td id='3' class='cell'></td>
+          </tr>
+          <tr>
+            <td id='4' class='cell'></td>
+            <td id='5' class='cell'></td>
+            <td id='6' class='cell'></td>
+          </tr>
+          <tr>
+            <td id='7' class='cell'></td>
+            <td id='8' class='cell'></td>
+            <td id='9' class='cell'></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </main>
   <!-- Optional JavaScript -->
   <script src=" js/index.js" type="module">
