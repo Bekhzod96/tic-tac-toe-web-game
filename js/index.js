@@ -42,18 +42,14 @@ const gameBoard = () => {
 	const getCellValue = (i) => Object.values(board)[i];
 
 	const boardCellUpdate = (index, sign) => {
-		if (getCellValue(index - 1) === '') {
-			board[index] = sign;
-			render();
-		}
-		return false;
+		board[index] = sign;
+		render();
 	};
 
 	const render = () => {
 		cells.forEach((el, i) => {
 			el.innerText = getCellValue(i);
 		});
-		return true;
 	};
 
 	return {
@@ -66,17 +62,13 @@ const gameBoard = () => {
 	};
 };
 
-const player = (Pname, Psigh) => {
-	const name = Pname;
-	const sign = Psigh;
-
+const player = (name, sign) => {
 	return { name, sign };
 };
 
 const game = (pl1, pl2) => {
 	let play1 = pl1;
 	let play2 = pl2;
-	let gameStat = true;
 	let sign = '';
 	let id = 0;
 	let countMove = 1;
@@ -84,16 +76,27 @@ const game = (pl1, pl2) => {
 
 	const onMove = (e) => {
 		id = parseInt(e.currentTarget.id);
-		console.log(sign);
-		if (countMove <= 9 && board.getCellValue(id) !== '') {
+
+		if (board.getCellValue(id - 1) === '') {
 			sign = countMove % 2 === 0 ? 'O' : 'X';
 			countMove += 1;
-			id = parseInt(e.currentTarget.id);
 			board.boardCellUpdate(id, sign);
-			gameStat = board.checkWin() ? false : true;
-		} else {
-			alert('Game Over!');
+
+			console.log(sign);
 		}
+		if (board.checkWin() || countMove >= 10) {
+			if (countMove >= 10) {
+				alert('Game Over');
+			} else {
+				const word = `You win ${findWinner()}`;
+				alert(word);
+			}
+			location.reload();
+		}
+	};
+
+	const findWinner = () => {
+		return sign === play1.sign ? play1.name : play2.name;
 	};
 
 	const initGame = () => {
