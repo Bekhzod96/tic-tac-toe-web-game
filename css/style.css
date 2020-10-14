@@ -1,17 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   height: 100vh;
 }
 
-
 .cell {
-  height: 20vw;
-  width: 20vw;
+  height: 15vw;
+  width: 15vw;
   text-align: center;
-  font-size: 96px;  
+  font-size: 50px;
 }
