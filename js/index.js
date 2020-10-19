@@ -85,11 +85,11 @@ const game = (pl1, pl2) => {
       board.boardCellUpdate(id, sign);
     }
     if (board.checkWin() || countMove >= 10) {
-      if (countMove >= 10) {
-        alert('Game Over'); // eslint-disable-line
-      } else {
+      if (board.checkWin()) {
         const word = `You win ${findWinner()}`;
-        alert(word);  // eslint-disable-line
+        alert(word);       // eslint-disable-line
+      } else {
+        alert('Game Over'); // eslint-disable-line
       }
       location.reload();  // eslint-disable-line
     }
