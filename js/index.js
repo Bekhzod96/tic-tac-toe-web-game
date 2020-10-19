@@ -1,7 +1,6 @@
 const find = (sel) => document.querySelector(sel);
 const cells = document.querySelectorAll('.cell');
 const startGameButton = find('.startGame');  // eslint-disable-line
-const resetGameButton = find('.startGame');
 
 const gameBoard = () => {
   let board = {
@@ -118,10 +117,10 @@ const game = (pl1, pl2) => {
   };
   return {};
 };
- 
-document.querySelector(".restGame").onclick = function() {
-  location.reload()
-}
+
+document.querySelector('.restGame').onclick = function () { // eslint-disable-line
+  location.reload(); // eslint-disable-line
+};
 
 window.onload = () => {
   game();
