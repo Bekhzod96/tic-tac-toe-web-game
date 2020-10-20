@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: bevan, sans-serif;
+}
+
+.cell {
+  height: 10rem;
+  width: 10rem;
+  text-align: center;
+  font-size: 80px;
+}
+
+.quit:hover {
+  cursor: pointer;
+}
+
+.cell:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: 0.5s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winner {
+  font-size: 48px;
+}

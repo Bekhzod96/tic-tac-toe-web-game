@@ -1,10 +1,31 @@
 # Tic Tac Toe
 
+Tic-tac-toe, noughts and crosses, or Xs and Os is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. <a hreh='https://en.wikipedia.org/wiki/Tic-tac-toe'>see more...</a>
+
+## Welcome Page
+
+![image](./static/start.png)
+
+## Gamepage
+
+![image](./static/gameBoard.png)
+
 ## Built With
 
 - Html
 - CSS
+- Bootsrap
 - Javascript
+
+## Live Demo
+
+[Live Demo Link](https://bekhzod96.github.io/tic-tac-toe/)
+
+## Project setup
+
+- Clone the repository `git clone https://github.com/Bekhzod96/tic-tac-toe`
+- Entry point `$./tic-tak-toe/index.html`
+- You can open any browser and start playing
 
 ## Author
 

@@ -5,23 +5,141 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+
   <link rel="stylesheet" href="css/style.css">
   <title>Tic Tac Toe</title>
 </head>
 
-<body class="container-fluid">
+<body>
   <header>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand mx-auto font-weight-bold" href="#">Library</a>
+    <nav class="navbar navbar-light bg-light shadow-lg ">
+      <p class="pl1-badge d-none badge-pill badge-success h4 my-1 mx-4"></p>
+      <a class="navbar-brand mx-auto font-weight-bold" href="">Tic-Tak-Toe</a>
+      <p class="pl2-badge d-none badge-pill badge-secondary h4 my-1 mx-4"></p>
+      <p class="badge-pill  badge-danger quit h4 my-1 mx-4 d-none">Quit</p>
     </nav>
   </header>
 
+  <!-- Modal -->
+  <div class="modal fade" id="warning" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Fill up missing fileds ...</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Player's name should not be blank
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="align-items-center  d-flex container w-100">
+    <!-- ===============Welcome Banner===================== -->
+    <section class="welcome text-center  mx-auto text-light">
+      <div class="bg-success p-5 rounded-rigt shadow-lg rounded">
+        <H1>
+
+          Start Game!
+        </H1>
+        <form class="d-flex flex-column">
+          <h6 class="text-center">Enter Player's Name</h6>
+          <span><input type="text" class="pl1 m-3 border-0 p-2" placeholder="Player 1" /><span
+              class="btn btn-light">X</span></span>
+          <span><input type="text" class="pl2 m-3 border-0 p-2" placeholder="Player 2" /><span
+              class="btn btn-light">O</span></span>
+          <button class="startGame btn btn-light m-3"> Start Game</button>
+        </form>
+      </div>
+    </section>
+    <!-- =============Game Over================== -->
+    <section class="game-over d-none text-center mx-auto text-white">
+      <div class="bg-danger p-5">
+        <h1>
+          GAME OVER!
+        </h1>
+        <span class="btn start btn-outline-light mt-4">
+          Continue <i class="fas fa-play  "></i>
+        </span>
+        <br />
+        <span class="btn restart  btn-outline-light mt-4">
+          Restart <i class="fas fa-redo-alt"></i>
+        </span>
+      </div>
+    </section>
+
+    <!-- =============WIN================== -->
+    <section class="win text-center d-none mx-auto h-50 w-50 text-white">
+      <div class="bg-success p-5 h-75">
+        <h1>
+          WIN!
+        </h1>
+        <p class="winner mt-5">
+
+        </p>
+        <span class="btn start btn-outline-light mt-4">
+          Continue <i class="fas fa-play"></i>
+        </span>
+        <br />
+        <span class="btn restart btn-outline-light mt-4">
+          Restart <i class="fas fa-redo-alt"></i>
+        </span>
+      </div>
+    </section>
+
+    <!-- =============Board===================== -->
+    <section class="board d-none mx-auto">
+      <table class="table table-bordered  table-dark">
+        <tbody>
+          <tr>
+            <td id='1' class='cell'></td>
+            <td id='2' class='cell'></td>
+            <td id='3' class='cell'></td>
+          </tr>
+          <tr>
+            <td id='4' class='cell'></td>
+            <td id='5' class='cell'></td>
+            <td id='6' class='cell'></td>
+          </tr>
+          <tr>
+            <td id='7' class='cell'></td>
+            <td id='8' class='cell'></td>
+            <td id='9' class='cell'></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="card bg-success p-5 rounded-rigt shadow-lg rounded">
+        <h4 class=' text-center '>Total rounds: <span class="total-score h3 badge-pill badge-light"> </span> </h4>
+        <div class="d-flex justify-content-around mt-4">
+          <span class="text-center">
+            <h4 class="pl1Name">Payer-1</h4>
+            <h2 class='pl1-score h2 badge-pill badge-light'></h2>
+          </span>
+          <span class="text-center">
+            <h4 class="pl2Name">Payer-2</h4>
+            <h2 class='pl2-score h2 badge-pill badge-light'></h2>
+          </span>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
   <!-- Optional JavaScript -->
-  <script src="js/index.js" type="module"></script>
+  <script src=" js/index.js" type="module">
+  </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -32,6 +150,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
