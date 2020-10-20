@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   overflow: hidden;
-  font-family: Bevan;
+  font-family: bevan, sans-serif;
 }
 
 .cell {
@@ -15,19 +15,19 @@ body {
   width: 15rem;
   text-align: center;
   font-size: 98px;
-  padding: auto;
 }
 
-.quit:hover{
+.quit:hover {
   cursor: pointer;
 }
-.cell:hover{
+
+.cell:hover {
   cursor: pointer;
   transform: scale(0.95);
   transition: 0.5s ease-in-out;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.winner{
+.winner {
   font-size: 48px;
 }
