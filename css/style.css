@@ -6,11 +6,28 @@
 
 body {
   height: 100vh;
+  overflow: hidden;
+  font-family: Bevan;
 }
 
 .cell {
-  height: 15vw;
-  width: 15vw;
+  height: 15rem;
+  width: 15rem;
   text-align: center;
-  font-size: 50px;
+  font-size: 98px;
+  padding: auto;
+}
+
+.quit:hover{
+  cursor: pointer;
+}
+.cell:hover{
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: 0.5s ease-in-out;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.winner{
+  font-size: 48px;
 }
