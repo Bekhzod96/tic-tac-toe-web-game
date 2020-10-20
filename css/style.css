@@ -5,16 +5,15 @@
 }
 
 body {
-  height: 100vh;
   overflow: hidden;
   font-family: bevan, sans-serif;
 }
 
 .cell {
-  height: 15rem;
-  width: 15rem;
+  height: 10rem;
+  width: 10rem;
   text-align: center;
-  font-size: 98px;
+  font-size: 80px;
 }
 
 .quit:hover {
