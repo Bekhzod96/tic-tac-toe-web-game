@@ -37,7 +37,7 @@ const renderWin = (str) => {
 };
 
 const reloadWind = () => {
-  location.reload();
+  location.reload(); // eslint-disable-line
 };
 
 const renderPayerBadge = (players, rounds) => {
@@ -88,23 +88,16 @@ const gameBoard = () => {
     [3, 5, 7],
   ];
 
-  const checkWin = () =>
-    winCase.some(
-      (ar) =>
-        board[ar[0]] === board[ar[1]] &&
-        board[ar[1]] === board[ar[2]] &&
-        board[ar[2]] !== ''
-    );
+  const checkWin = () => winCase.some(
+    (ar) => board[ar[0]] === board[ar[1]]
+        && board[ar[1]] === board[ar[2]]
+        && board[ar[2]] !== '',
+  );
 
   const attachEnentListener = (func) => {
     cells.forEach((el) => {
       el.onclick = func;
     });
-  };
-
-  const cleanBoard = () => {
-    board = { 1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '', 9: '' };
-    render();
   };
   const getCellValue = (i) => Object.values(board)[i];
 
@@ -113,6 +106,14 @@ const gameBoard = () => {
       el.innerText = getCellValue(i);
     });
   };
+
+  const cleanBoard = () => {
+    board = {
+      1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '', 9: '',
+    };
+    render();
+  };
+
 
   const boardCellUpdate = (index, sign) => {
     board[index] = sign;
@@ -132,20 +133,20 @@ const gameBoard = () => {
 const player = (name, i) => {
   const signs = ['X', 'O'];
   const sign = signs[i];
-  let score = 0;
+  const score = 0;
   return { name, sign, score };
 };
 
 const game = () => {
-  let players = [],
-    sign = '',
-    rounds = 0,
-    id = 0,
-    countMove = 1;
+  let players = [];
+  let sign = '';
+  let rounds = 0;
+  let id = 0;
+  let countMove = 1;
   const board = gameBoard();
   const findWinner = () => {
-    let i = sign === players[0].sign ? 0 : 1;
-    players[i].score++;
+    const i = sign === players[0].sign ? 0 : 1;
+    players[i].score += 1;
     return players[i].name;
   };
 
@@ -164,7 +165,7 @@ const game = () => {
     }
     setTimeout(() => {
       if (board.checkWin() || countMove >= 10) {
-        rounds++;
+        rounds += 1;
         if (board.checkWin()) {
           renderWin(findWinner());
         } else {
@@ -198,13 +199,12 @@ const game = () => {
         el.onclick = continuePlay;
       });
     } else {
-      $('#warning').modal();
+      $('#warning').modal();  // eslint-disable-line
     }
   };
 
   // =========== Click start button =============
   startGameButton.onclick = (e) => {
-    // eslint-disable-line
     e.preventDefault();
     initGame();
   };
