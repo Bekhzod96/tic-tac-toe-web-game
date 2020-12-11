@@ -130,7 +130,7 @@ const gameBoard = () => {
   };
 };
 
-export const player = (name, i) => {
+const player = (name, i) => {
   const signs = ['X', 'O'];
   const sign = signs[i];
   const score = 0;
@@ -215,3 +215,5 @@ const game = () => {
 window.onload = () => {
   game();
 };
+
+export default player;
