@@ -208,7 +208,6 @@ const game = () => {
     e.preventDefault();
     initGame();
   };
-  return {};
 };
 
 // =========== On Load= =====================
@@ -216,4 +215,4 @@ window.onload = () => {
   game();
 };
 
-export default player;
+export { game, player };
