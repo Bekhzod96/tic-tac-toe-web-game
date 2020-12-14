@@ -27,6 +27,11 @@ Tic-tac-toe, noughts and crosses, or Xs and Os is a game for two players, X and 
 - Entry point `$./tic-tak-toe/index.html`
 - You can open any browser and start playing
 
+## Testing
+
+- Using Jest
+- to run test `npm test` in terminal
+
 ## Author
 
 👤 **Bekhzod Akhrorov**

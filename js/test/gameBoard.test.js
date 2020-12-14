@@ -14,9 +14,6 @@ test('Get board cleared', () => {
   });
 });
 
-test('check wining combination', () => {
-  expect(tic.checkWin()).toEqual(false);
-});
 
 test('Adding sign in board', () => {
   expect(tic.boardCellUpdate(1, 'X')).toEqual({
@@ -34,4 +31,8 @@ test('Adding sign in board', () => {
   expect(tic.boardCellUpdate(5, 'O')).toEqual({
     1: 'X', 2: '', 3: 'X', 4: '', 5: 'O', 6: '', 7: '', 8: '', 9: '',
   });
+});
+
+test('check wining combination', () => {
+  expect(tic.checkWin()).toEqual(false);
 });
