@@ -112,12 +112,14 @@ const gameBoard = () => {
       1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '', 9: '',
     };
     render();
+    return board;
   };
 
 
   const boardCellUpdate = (index, sign) => {
     board[index] = sign;
     render();
+    return board;
   };
 
   return {
@@ -125,6 +127,7 @@ const gameBoard = () => {
     getCellValue,
     checkWin,
     render,
+    board,
     attachEnentListener,
     boardCellUpdate,
   };
@@ -208,10 +211,11 @@ const game = () => {
     e.preventDefault();
     initGame();
   };
-  return {};
 };
 
 // =========== On Load= =====================
 window.onload = () => {
   game();
 };
+
+export { gameBoard, player };
